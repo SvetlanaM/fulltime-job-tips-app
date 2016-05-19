@@ -1,5 +1,5 @@
 //
-//  TransitionViewController.swift
+//  GreyViewController.swift
 //  fullTimeJobsTips
 //
 //  Created by Svetlana Margetová on 19.05.16.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class TransitionViewController: UIViewController {
+class GreyViewController: UIViewController {
 
-    
     var titleA : String?
     
     var iconName : String?
@@ -19,9 +18,9 @@ class TransitionViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBarHidden = true
-        self.view.backgroundColor = UIColor(red: 235/255.0, green: 20/255.0, blue: 77/255.0, alpha: 1.0)
+        self.view.backgroundColor = UIColor(red: 141/255.0, green: 133/255.0, blue: 135/255.0, alpha: 1.0)
         
-        self.iconName = "uncheck-icon"
+        self.iconName = "info-icon"
         
         let image = UIImage(named: self.iconName!)
         let imageV = UIImageView(image : image!)
@@ -31,7 +30,7 @@ class TransitionViewController: UIViewController {
         
         self.view.addSubview(imageV)
         
-        self.titleA = "Bad choice. This answer is good!"
+        self.titleA = "Try next. This answer is bad at the interview!"
         let titleLabel = UILabel(frame: CGRectMake(30, 300, self.view.frame.width-60, 120))
         titleLabel.text = self.titleA
         titleLabel.lineBreakMode = .ByWordWrapping
@@ -40,9 +39,9 @@ class TransitionViewController: UIViewController {
         titleLabel.textAlignment = .Center
         titleLabel.textColor = .whiteColor()
         self.view.addSubview(titleLabel)
-
+        
         // Do any additional setup after loading the view.
     }
-    
-    
+
+
 }

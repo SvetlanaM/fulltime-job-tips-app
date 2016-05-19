@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="3406" y="847"/>
         </scene>
-        <!--View Controller-->
+        <!--Green View Controller-->
         <scene sceneID="5Ng-57-gMp">
             <objects>
-                <viewController id="FBO-9e-OUi" sceneMemberID="viewController">
+                <viewController id="FBO-9e-OUi" customClass="GreenViewController" customModule="fullTimeJobsTips" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PK2-2i-ide"/>
                         <viewControllerLayoutGuide type="bottom" id="ZNt-BG-Arn"/>
@@ -110,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="4122" y="847"/>
         </scene>
-        <!--View Controller-->
+        <!--Grey View Controller-->
         <scene sceneID="lpB-Hh-UFp">
             <objects>
-                <viewController id="YWi-sD-QsX" sceneMemberID="viewController">
+                <viewController id="YWi-sD-QsX" customClass="GreyViewController" customModule="fullTimeJobsTips" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6OC-7c-XjJ"/>
                         <viewControllerLayoutGuide type="bottom" id="eGj-WD-NMC"/>
