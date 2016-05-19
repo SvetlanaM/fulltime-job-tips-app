@@ -16,7 +16,12 @@
 		DC3533EB1CEBBA1C00A8C6EB /* BasicQuestionControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3533EA1CEBBA1C00A8C6EB /* BasicQuestionControllerView.swift */; };
 		DC3533ED1CEC73E800A8C6EB /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3533EC1CEC73E800A8C6EB /* CustomCollectionViewCell.swift */; };
 		DC3533EF1CECAE5900A8C6EB /* BasicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3533EE1CECAE5900A8C6EB /* BasicDetailViewController.swift */; };
-		DC9FD7B81CECC30C00F4E178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9FD7B71CECC30C00F4E178 /* Main.storyboard */; };
+		DCCDBFC91CEDA6C000BFA005 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCDBFC81CEDA6C000BFA005 /* Main.storyboard */; };
+		DCCDBFCB1CEDB96E00BFA005 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBFCA1CEDB96E00BFA005 /* TransitionViewController.swift */; };
+		DCCDBFD71CEDBE8D00BFA005 /* AAPTransactionDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBFD41CEDBE8D00BFA005 /* AAPTransactionDirector.swift */; };
+		DCCDBFD81CEDBE8D00BFA005 /* UINavigationController+RadialTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBFD51CEDBE8D00BFA005 /* UINavigationController+RadialTransaction.swift */; };
+		DCCDBFD91CEDBE8D00BFA005 /* UIView+Radial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBFD61CEDBE8D00BFA005 /* UIView+Radial.swift */; };
+		DCCDBFDB1CEDCEC900BFA005 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBFDA1CEDCEC900BFA005 /* GreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +38,12 @@
 		DC3533EA1CEBBA1C00A8C6EB /* BasicQuestionControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicQuestionControllerView.swift; path = ../BasicQuestionControllerView.swift; sourceTree = "<group>"; };
 		DC3533EC1CEC73E800A8C6EB /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		DC3533EE1CECAE5900A8C6EB /* BasicDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicDetailViewController.swift; sourceTree = "<group>"; };
-		DC9FD7B71CECC30C00F4E178 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DCCDBFC81CEDA6C000BFA005 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DCCDBFCA1CEDB96E00BFA005 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
+		DCCDBFD41CEDBE8D00BFA005 /* AAPTransactionDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPTransactionDirector.swift; sourceTree = "<group>"; };
+		DCCDBFD51CEDBE8D00BFA005 /* UINavigationController+RadialTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+RadialTransaction.swift"; sourceTree = "<group>"; };
+		DCCDBFD61CEDBE8D00BFA005 /* UIView+Radial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Radial.swift"; sourceTree = "<group>"; };
+		DCCDBFDA1CEDCEC900BFA005 /* GreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +96,13 @@
 		DC08916E1CEB15A0008499B6 /* fullTimeJobsTips */ = {
 			isa = PBXGroup;
 			children = (
-				DC9FD7B71CECC30C00F4E178 /* Main.storyboard */,
+				DCCDBFC81CEDA6C000BFA005 /* Main.storyboard */,
+				DCCDBFD41CEDBE8D00BFA005 /* AAPTransactionDirector.swift */,
+				DCCDBFD51CEDBE8D00BFA005 /* UINavigationController+RadialTransaction.swift */,
+				DCCDBFD61CEDBE8D00BFA005 /* UIView+Radial.swift */,
 				DC3533EA1CEBBA1C00A8C6EB /* BasicQuestionControllerView.swift */,
 				DC3533EE1CECAE5900A8C6EB /* BasicDetailViewController.swift */,
+				DCCDBFCA1CEDB96E00BFA005 /* TransitionViewController.swift */,
 				DC3533EC1CEC73E800A8C6EB /* CustomCollectionViewCell.swift */,
 				DC08916F1CEB15A0008499B6 /* AppDelegate.swift */,
 				DC3533E81CEBA25600A8C6EB /* Questions.swift */,
@@ -96,6 +110,7 @@
 				DC0891761CEB15A0008499B6 /* Assets.xcassets */,
 				DC0891781CEB15A0008499B6 /* LaunchScreen.storyboard */,
 				DC08917B1CEB15A0008499B6 /* Info.plist */,
+				DCCDBFDA1CEDCEC900BFA005 /* GreenViewController.swift */,
 			);
 			path = fullTimeJobsTips;
 			sourceTree = "<group>";
@@ -161,7 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC9FD7B81CECC30C00F4E178 /* Main.storyboard in Resources */,
+				DCCDBFC91CEDA6C000BFA005 /* Main.storyboard in Resources */,
 				DC08917A1CEB15A0008499B6 /* LaunchScreen.storyboard in Resources */,
 				DC0891771CEB15A0008499B6 /* Assets.xcassets in Resources */,
 			);
@@ -224,9 +239,14 @@
 			files = (
 				DC0891721CEB15A0008499B6 /* ViewController.swift in Sources */,
 				DC3533ED1CEC73E800A8C6EB /* CustomCollectionViewCell.swift in Sources */,
+				DCCDBFDB1CEDCEC900BFA005 /* GreenViewController.swift in Sources */,
 				DC3533E91CEBA25600A8C6EB /* Questions.swift in Sources */,
+				DCCDBFD71CEDBE8D00BFA005 /* AAPTransactionDirector.swift in Sources */,
+				DCCDBFD81CEDBE8D00BFA005 /* UINavigationController+RadialTransaction.swift in Sources */,
+				DCCDBFD91CEDBE8D00BFA005 /* UIView+Radial.swift in Sources */,
 				DC0891701CEB15A0008499B6 /* AppDelegate.swift in Sources */,
 				DC3533EF1CECAE5900A8C6EB /* BasicDetailViewController.swift in Sources */,
+				DCCDBFCB1CEDB96E00BFA005 /* TransitionViewController.swift in Sources */,
 				DC3533EB1CEBBA1C00A8C6EB /* BasicQuestionControllerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

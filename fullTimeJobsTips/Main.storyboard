@@ -39,14 +39,96 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="FulltimeJobsTips" id="gck-4y-NWb">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="OJl-81-yfX"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="OJl-81-yfX">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mk-9E-A2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1900" y="847"/>
         </scene>
-        <!--Title-->
+        <!--Transition View Controller-->
+        <scene sceneID="ei3-d2-CI8">
+            <objects>
+                <viewController storyboardIdentifier="answerVC" id="G0v-Dc-9rg" customClass="TransitionViewController" customModule="fullTimeJobsTips" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CMW-Sf-grr"/>
+                        <viewControllerLayoutGuide type="bottom" id="0gb-MK-XvF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RCv-kz-hoh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="knD-pf-LPg">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="WLR-XF-UtJ"/>
+                                    <constraint firstAttribute="height" constant="100" id="jar-4R-3uJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyN-Pn-5MN">
+                                <rect key="frame" x="127" y="387" width="385" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.078431372549019607" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="knD-pf-LPg" firstAttribute="centerY" secondItem="RCv-kz-hoh" secondAttribute="centerY" id="0ND-80-7kQ"/>
+                            <constraint firstItem="knD-pf-LPg" firstAttribute="centerX" secondItem="RCv-kz-hoh" secondAttribute="centerX" id="EAd-yn-Vuv"/>
+                            <constraint firstItem="iyN-Pn-5MN" firstAttribute="centerX" secondItem="RCv-kz-hoh" secondAttribute="centerX" constant="19.5" id="QQi-vi-POl"/>
+                            <constraint firstItem="iyN-Pn-5MN" firstAttribute="top" secondItem="knD-pf-LPg" secondAttribute="bottom" constant="37" id="aj7-pW-pOk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iyN-Pn-5MN" secondAttribute="trailing" constant="68" id="kAv-Na-wY8"/>
+                            <constraint firstItem="0gb-MK-XvF" firstAttribute="top" secondItem="iyN-Pn-5MN" secondAttribute="bottom" constant="174" id="ydo-y9-VxA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleA" destination="iyN-Pn-5MN" id="Crs-Bt-syk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T93-iv-zV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3406" y="847"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5Ng-57-gMp">
+            <objects>
+                <viewController id="FBO-9e-OUi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PK2-2i-ide"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZNt-BG-Arn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5sI-fg-tgf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kuQ-8e-ZVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4122" y="847"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lpB-Hh-UFp">
+            <objects>
+                <viewController id="YWi-sD-QsX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6OC-7c-XjJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="eGj-WD-NMC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N4r-yr-9rR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ECO-J2-zT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4806" y="847"/>
+        </scene>
+        <!--Basic HR questions-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="BasicDetailViewController" customModule="fullTimeJobsTips" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,8 +204,10 @@
                             <constraint firstItem="j9I-PL-l7Q" firstAttribute="trailing" secondItem="DmE-Wh-oRw" secondAttribute="trailing" id="rWm-Oa-xBB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="3CQ-e9-iHs">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="xDv-0E-wCz"/>
+                    <navigationItem key="navigationItem" title="Basic HR questions" id="3CQ-e9-iHs">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="xDv-0E-wCz">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="badBtn" destination="Q2v-5P-bhA" id="T4h-g0-Tcd"/>
@@ -146,9 +230,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ehL-kO-bpJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.043137254901960784" green="0.47450980392156861" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
