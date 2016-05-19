@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vqw-s1-v4m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jMN-3R-Lpm">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Basic View Controller-->
+        <!--FulltimeJobsTips-->
         <scene sceneID="IDu-yp-tHW">
             <objects>
                 <collectionViewController id="Vqw-s1-v4m" customClass="BasicViewController" customModule="fullTimeJobsTips" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="TDp-4P-P4a" customClass="CustomCollectionViewCell" customModule="fullTimeJobsTips" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -29,7 +29,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="answerDetail" id="Tg4-Eu-Iso"/>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="answerDetail" id="IEU-kt-JZd"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -38,12 +38,15 @@
                             <outlet property="delegate" destination="Vqw-s1-v4m" id="cmL-pr-ukF"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="FulltimeJobsTips" id="gck-4y-NWb">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="OJl-81-yfX"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mk-9E-A2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1088" y="847"/>
+            <point key="canvasLocation" x="1900" y="847"/>
         </scene>
-        <!--Basic Detail View Controller-->
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="BasicDetailViewController" customModule="fullTimeJobsTips" customModuleProvider="target" sceneMemberID="viewController">
@@ -119,17 +122,43 @@
                             <constraint firstItem="j9I-PL-l7Q" firstAttribute="trailing" secondItem="DmE-Wh-oRw" secondAttribute="trailing" id="rWm-Oa-xBB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="3CQ-e9-iHs">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="xDv-0E-wCz"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="badBtn" destination="Q2v-5P-bhA" id="T4h-g0-Tcd"/>
                         <outlet property="goodBtn" destination="j9I-PL-l7Q" id="ZOb-XN-sLo"/>
                         <outlet property="qCoverImage" destination="DmE-Wh-oRw" id="PaI-p1-Jas"/>
                         <outlet property="qDesc" destination="txE-GR-q9E" id="fZ2-Xq-4o6"/>
-                        <outlet property="qTitle" destination="aHA-3s-yVp" id="0wg-OJ-29j"/>
+                        <outlet property="qTitle" destination="aHA-3s-yVp" id="1Qe-zH-K1E"/>
+                        <outlet property="titleNav" destination="3CQ-e9-iHs" id="Gms-an-hiq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881" y="847"/>
+            <point key="canvasLocation" x="2693" y="847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xdu-Xf-WsV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jMN-3R-Lpm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ehL-kO-bpJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.043137254901960784" green="0.47450980392156861" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vqw-s1-v4m" kind="relationship" relationship="rootViewController" id="tFD-mM-hyR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRk-gD-3kg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1088" y="847"/>
         </scene>
     </scenes>
 </document>
