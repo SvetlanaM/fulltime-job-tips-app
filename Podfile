@@ -10,4 +10,5 @@ target 'fullTimeJobsTips' do
   pod 'SwiftyJSON'
   pod 'Alamofire'
   pod 'KeychainAccess'
+  pod 'SnapKit'
 end

@@ -12,6 +12,8 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.tintColor = UIColor.whiteColor()
+        
         
         
         
@@ -43,6 +45,9 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         //self.collection!.backgroundColor = .redColor()
         // Do any additional setup after loading the view.
     }
+    
+    
+    
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

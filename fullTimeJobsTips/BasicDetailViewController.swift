@@ -12,6 +12,7 @@ import SwiftyJSON
 class BasicDetailViewController: UIViewController {
     
     
+    
     @IBOutlet weak var titleNav: UINavigationItem!
     var badBtn = UIButton(type: .System) as UIButton
     var numOfTaps : Int = 1
@@ -31,11 +32,6 @@ class BasicDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
-        
-        self.navigationController?.navigationBarHidden = false
-        
-        
-        
         let image = UIImage(data: self.coverImage1)
         self.imageV = UIImageView(image : image!)
         self.imageV.frame = CGRectMake(0, 60, self.view.frame.width, 250)
@@ -101,6 +97,8 @@ class BasicDetailViewController: UIViewController {
         self.goodBtn.addTarget(self, action: "buttonGood:", forControlEvents: .TouchUpInside)
         
     }
+    
+    
 
     
     
@@ -117,6 +115,7 @@ class BasicDetailViewController: UIViewController {
         let AnswerViewController =  TransitionViewController() as! UIViewController
         
         self.navigationController?.radialPushViewController(AnswerViewController, duration: 1.0, startFrame: badBtn.frame, transitionCompletion: nil)
+        
         
         
         
@@ -145,24 +144,16 @@ class BasicDetailViewController: UIViewController {
         let AnswerViewController =  GreyViewController() as! UIViewController
         
         self.navigationController?.radialPushViewController(AnswerViewController, duration: 1.0, startFrame: badBtn.frame, transitionCompletion: nil)
-        
-        
-        
         delay(3) {
             
             self.navigationController!.popViewControllerAnimated(true)
         }
         
     }
-
-
     
     func buttonBad(sender: UIButton!) {
-        
-        
-        
         delay(0.3) {
-        var n = self.numOfTaps
+        let n = self.numOfTaps
         for item in n...n {
             print (self.qDescription[item]["answer"].string!)
             self.descLabel.text = self.qDescription[item]["answer"].string!
@@ -170,14 +161,12 @@ class BasicDetailViewController: UIViewController {
                 self.getRed()
             }
             else if self.qDescription[item]["is_right"] == false {
-                self.getGrey()
+                self.getGreen()
             }
             else {
                 self.getGrey()
             }
         }
-        
-       
         
         if self.qDescription.count-1 != self.numOfTaps {
             self.numOfTaps += 1
@@ -203,9 +192,6 @@ class BasicDetailViewController: UIViewController {
     
     
     func buttonGood(sender: UIButton!) {
-        
-        
-        
         delay(0.3) {
             var n = self.numOfTaps
             for item in n...n {
@@ -221,9 +207,6 @@ class BasicDetailViewController: UIViewController {
                     self.getGrey()
                 }
             }
-            
-            
-            
             if self.qDescription.count-1 != self.numOfTaps {
                 self.numOfTaps += 1
             }

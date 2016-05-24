@@ -26,3 +26,27 @@ class Question: NSObject {
     }
 
 }
+
+class AboutAuthor : NSObject {
+    var id : Int
+    var firstName : String
+    var lastName : String
+    var phoneNumber : String
+    var linkedin : String
+    var website : String
+    var userPhoto : String
+    var aDescription: String
+    
+    init(id : Int, firstName : String, lastName : String, phoneNumber : String, linkedin : String, website : String, userPhoto : String, aDescription : String) {
+        self.id = id
+        self.firstName = firstName
+        self.lastName = lastName
+        self.phoneNumber = phoneNumber
+        self.linkedin = linkedin
+        self.website = website
+        self.userPhoto = userPhoto
+        self.aDescription = aDescription
+    }
+    
+    
+}
