@@ -27,26 +27,26 @@ class Question: NSObject {
 
 }
 
-class AboutAuthor : NSObject {
+
+class Reward : NSObject {
     var id : Int
-    var firstName : String
-    var lastName : String
-    var phoneNumber : String
-    var linkedin : String
-    var website : String
-    var userPhoto : String
-    var aDescription: String
+    var title : String
+    var badgeDescription : String
+    var icon : String
+    var totalPoints : Int
+    var price : String
+    var priceLink : String
+    var priceEbook : String
     
-    init(id : Int, firstName : String, lastName : String, phoneNumber : String, linkedin : String, website : String, userPhoto : String, aDescription : String) {
+    init(id : Int, title : String, badgeDescription : String, icon : String, totalPoints : Int, price : String, priceLink : String, priceEbook : String) {
         self.id = id
-        self.firstName = firstName
-        self.lastName = lastName
-        self.phoneNumber = phoneNumber
-        self.linkedin = linkedin
-        self.website = website
-        self.userPhoto = userPhoto
-        self.aDescription = aDescription
+        self.title = title
+        self.badgeDescription = badgeDescription
+        self.icon = icon
+        self.totalPoints = totalPoints
+        self.price = price
+        self.priceLink = priceLink
+        self.priceEbook = priceEbook
     }
-    
     
 }

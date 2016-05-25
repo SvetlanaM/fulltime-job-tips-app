@@ -9,10 +9,11 @@
 import UIKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
+    
+    // Basic variables
     var title : UILabel!
     var imageView : UIImageView!
     var aCounts : UILabel!
-    
     
     required init(coder aDecoder : NSCoder) {
         super.init(coder : aDecoder)!
@@ -20,23 +21,19 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame : frame)
-        
-        
         imageView = UIImageView(frame: CGRectMake(0, 0, frame.size.width, 130))
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
         imageView.clipsToBounds = true
-        
         contentView.addSubview(imageView)
         
-        
-        let tvFrame = CGRectMake(10, 150, self.imageView.frame.width-10, 20)
+        let tvFrame = CGRectMake(10, 140, self.imageView.frame.width-10, 50)
         title = UILabel(frame: tvFrame)
-        title.font = UIFont.systemFontOfSize(16.0)
+        title.font = UIFont.systemFontOfSize(13.0)
         title.textColor = .blackColor()
         title.backgroundColor = .whiteColor()
         title.textAlignment = .Left
         title.numberOfLines = 2
-        
+        title.lineBreakMode = .ByWordWrapping
         contentView.addSubview(title)
         
         let cFrame = CGRectMake(10, 170, self.imageView.frame.width-10, 10)
@@ -46,11 +43,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
         aCounts.backgroundColor = .whiteColor()
         aCounts.textAlignment = .Left
         aCounts.numberOfLines = 1
-        
         contentView.addSubview(aCounts)
-        
-        
     }
-    
-    
 }

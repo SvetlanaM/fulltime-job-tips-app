@@ -17,7 +17,8 @@
 		DC3533EB1CEBBA1C00A8C6EB /* BasicQuestionControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3533EA1CEBBA1C00A8C6EB /* BasicQuestionControllerView.swift */; };
 		DC3533ED1CEC73E800A8C6EB /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3533EC1CEC73E800A8C6EB /* CustomCollectionViewCell.swift */; };
 		DC3533EF1CECAE5900A8C6EB /* BasicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3533EE1CECAE5900A8C6EB /* BasicDetailViewController.swift */; };
-		DC392C8B1CF4C521004FFEBE /* AboutAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC392C8A1CF4C521004FFEBE /* AboutAuthorViewController.swift */; };
+		DC392C8D1CF605FE004FFEBE /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC392C8C1CF605FE004FFEBE /* RewardsViewController.swift */; };
+		DC392C8F1CF60C22004FFEBE /* RewardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC392C8E1CF60C22004FFEBE /* RewardCollectionViewCell.swift */; };
 		DCCDBFC91CEDA6C000BFA005 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCDBFC81CEDA6C000BFA005 /* Main.storyboard */; };
 		DCCDBFCB1CEDB96E00BFA005 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBFCA1CEDB96E00BFA005 /* TransitionViewController.swift */; };
 		DCCDBFD71CEDBE8D00BFA005 /* AAPTransactionDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBFD41CEDBE8D00BFA005 /* AAPTransactionDirector.swift */; };
@@ -42,7 +43,8 @@
 		DC3533EA1CEBBA1C00A8C6EB /* BasicQuestionControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicQuestionControllerView.swift; path = ../BasicQuestionControllerView.swift; sourceTree = "<group>"; };
 		DC3533EC1CEC73E800A8C6EB /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		DC3533EE1CECAE5900A8C6EB /* BasicDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicDetailViewController.swift; sourceTree = "<group>"; };
-		DC392C8A1CF4C521004FFEBE /* AboutAuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutAuthorViewController.swift; sourceTree = "<group>"; };
+		DC392C8C1CF605FE004FFEBE /* RewardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
+		DC392C8E1CF60C22004FFEBE /* RewardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardCollectionViewCell.swift; sourceTree = "<group>"; };
 		DCCDBFC81CEDA6C000BFA005 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DCCDBFCA1CEDB96E00BFA005 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		DCCDBFD41CEDBE8D00BFA005 /* AAPTransactionDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPTransactionDirector.swift; sourceTree = "<group>"; };
@@ -106,7 +108,6 @@
 				DCCDBFD41CEDBE8D00BFA005 /* AAPTransactionDirector.swift */,
 				DCCDBFD51CEDBE8D00BFA005 /* UINavigationController+RadialTransaction.swift */,
 				DCCDBFD61CEDBE8D00BFA005 /* UIView+Radial.swift */,
-				DC392C8A1CF4C521004FFEBE /* AboutAuthorViewController.swift */,
 				DC3533EA1CEBBA1C00A8C6EB /* BasicQuestionControllerView.swift */,
 				DC3533EE1CECAE5900A8C6EB /* BasicDetailViewController.swift */,
 				DC1D6C5A1CF3158C00D5D403 /* SmartQuestionViewController.swift */,
@@ -114,6 +115,8 @@
 				DCCDBFDA1CEDCEC900BFA005 /* GreenViewController.swift */,
 				DCCDBFDC1CEDCEEC00BFA005 /* GreyViewController.swift */,
 				DC3533EC1CEC73E800A8C6EB /* CustomCollectionViewCell.swift */,
+				DC392C8C1CF605FE004FFEBE /* RewardsViewController.swift */,
+				DC392C8E1CF60C22004FFEBE /* RewardCollectionViewCell.swift */,
 				DC08916F1CEB15A0008499B6 /* AppDelegate.swift */,
 				DC3533E81CEBA25600A8C6EB /* Questions.swift */,
 				DC0891711CEB15A0008499B6 /* ViewController.swift */,
@@ -247,19 +250,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0891721CEB15A0008499B6 /* ViewController.swift in Sources */,
+				DC392C8D1CF605FE004FFEBE /* RewardsViewController.swift in Sources */,
 				DC3533ED1CEC73E800A8C6EB /* CustomCollectionViewCell.swift in Sources */,
 				DCCDBFDB1CEDCEC900BFA005 /* GreenViewController.swift in Sources */,
 				DC3533E91CEBA25600A8C6EB /* Questions.swift in Sources */,
 				DCCDBFD71CEDBE8D00BFA005 /* AAPTransactionDirector.swift in Sources */,
 				DCCDBFDD1CEDCEEC00BFA005 /* GreyViewController.swift in Sources */,
 				DCCDBFD81CEDBE8D00BFA005 /* UINavigationController+RadialTransaction.swift in Sources */,
-				DC392C8B1CF4C521004FFEBE /* AboutAuthorViewController.swift in Sources */,
 				DCCDBFD91CEDBE8D00BFA005 /* UIView+Radial.swift in Sources */,
 				DC0891701CEB15A0008499B6 /* AppDelegate.swift in Sources */,
 				DC1D6C5B1CF3158C00D5D403 /* SmartQuestionViewController.swift in Sources */,
 				DC3533EF1CECAE5900A8C6EB /* BasicDetailViewController.swift in Sources */,
 				DCCDBFCB1CEDB96E00BFA005 /* TransitionViewController.swift in Sources */,
 				DC3533EB1CEBBA1C00A8C6EB /* BasicQuestionControllerView.swift in Sources */,
+				DC392C8F1CF60C22004FFEBE /* RewardCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
