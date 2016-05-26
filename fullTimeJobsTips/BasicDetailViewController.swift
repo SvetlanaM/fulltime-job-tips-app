@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class BasicDetailViewController: UIViewController {
+class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
     
     // Basic variables
     @IBOutlet weak var titleNav: UINavigationItem!
@@ -150,6 +150,39 @@ class BasicDetailViewController: UIViewController {
         }
     }
     
+    func getPoints(n : Int) {
+        if n == 9 {
+            showAlert("You won first badge")
+        }
+        else if n == 50 {
+            showAlert("You won second badge")
+        }
+        else if n == 80 {
+            showAlert("You won third badge")
+        }
+        else if n == 120 {
+            showAlert("You won fourth badge")
+        }
+        else if n == 180 {
+            showAlert("You won the last badge")
+        }
+        else {
+            print ("None badge")
+        }
+        
+    }
+    
+    func showAlert(message : String) {
+        // Alert view
+        let alertController = UIAlertController(title: "You get a badge!", message: message, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "Ok", style: .Default, handler: {
+            (action) -> Void in print("ok")
+        })
+        
+        alertController.addAction(okAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     // Bad answer logic
     func buttonBad(sender: UIButton!) {
         delay(0.5) {
@@ -176,9 +209,14 @@ class BasicDetailViewController: UIViewController {
         else {
             self.imageV.frame = CGRectMake(0, 60, self.view.frame.width, 200)
             self.titleLabel.text = "Congratulations!"
+            
+            
             self.descLabel.text = "You succesfully finished \(self.qTitle1) section with \(self.countGood) good answers! Now you can continue with the next question sections and learn more to be more prepared on the interview."
             self.badBtn.hidden = true
             self.goodBtn.hidden = true
+            let defaults = NSUserDefaults.standardUserDefaults()
+            let token = defaults.integerForKey("Points")
+            self.getPoints(token)
             }
         }
     }

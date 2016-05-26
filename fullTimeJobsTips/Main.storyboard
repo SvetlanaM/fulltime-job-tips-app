@@ -80,11 +80,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Badges" id="hxw-Os-xcQ"/>
+                    <navigationItem key="navigationItem" title="Rewards" id="nmu-RH-GJP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNx-Yg-Fvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2675" y="1658"/>
+            <point key="canvasLocation" x="3487" y="1658"/>
         </scene>
         <!--Transition View Controller-->
         <scene sceneID="ei3-d2-CI8">
@@ -301,13 +301,25 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.043137254899999998" green="0.47450980390000003" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="selectedImageTintColor">
+                                <color key="value" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                            <color key="value" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="selectedImageTintColor">
+                            <color key="value" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="jMN-3R-Lpm" kind="relationship" relationship="viewControllers" id="ekY-gu-mwX"/>
                         <segue destination="s2R-pM-B3k" kind="relationship" relationship="viewControllers" id="SZb-aq-1ir"/>
-                        <segue destination="9p4-Yf-Fhw" kind="relationship" relationship="viewControllers" id="ivp-rr-9BV"/>
+                        <segue destination="yLk-Hu-XhK" kind="relationship" relationship="viewControllers" id="ivp-rr-9BV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xS9-gO-nv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -337,8 +349,34 @@
             </objects>
             <point key="canvasLocation" x="1088" y="1653"/>
         </scene>
+        <!--Badges-->
+        <scene sceneID="Q0w-WS-Csk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yLk-Hu-XhK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Badges" image="badge" id="hxw-Os-xcQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q2L-zJ-m5C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.043137254899999998" green="0.47450980390000003" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.043137254899999998" green="0.47450980390000003" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9p4-Yf-Fhw" kind="relationship" relationship="rootViewController" id="48e-RG-i5K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZ2-Uz-GqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2675" y="1658"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="badge" width="25" height="25"/>
         <image name="basic" width="25" height="25"/>
         <image name="smart" width="25" height="25"/>
     </resources>

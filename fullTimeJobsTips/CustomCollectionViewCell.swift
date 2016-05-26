@@ -26,7 +26,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         imageView.clipsToBounds = true
         contentView.addSubview(imageView)
         
-        let tvFrame = CGRectMake(10, 140, self.imageView.frame.width-10, 50)
+        let tvFrame = CGRectMake(10, 130, self.imageView.frame.width-10, 50)
         title = UILabel(frame: tvFrame)
         title.font = UIFont.systemFontOfSize(13.0)
         title.textColor = .blackColor()

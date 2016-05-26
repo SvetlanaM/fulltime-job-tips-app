@@ -35,18 +35,25 @@ class Reward : NSObject {
     var icon : String
     var totalPoints : Int
     var price : String
-    var priceLink : String
-    var priceEbook : String
+    var priceLink : String = ""
+    var priceEbook : String = ""
     
-    init(id : Int, title : String, badgeDescription : String, icon : String, totalPoints : Int, price : String, priceLink : String, priceEbook : String) {
+    
+    init(id : Int, title : String, badgeDescription : String, icon : String, totalPoints : Int, price : String) {
         self.id = id
         self.title = title
         self.badgeDescription = badgeDescription
         self.icon = icon
         self.totalPoints = totalPoints
         self.price = price
-        self.priceLink = priceLink
-        self.priceEbook = priceEbook
+    }
+    
+    func changeIcon(name : String) {
+        icon = name
+    }
+    
+    func setThePriceEbook(link : String) {
+        priceEbook = link
     }
     
 }

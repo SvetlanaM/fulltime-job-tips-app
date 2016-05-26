@@ -16,14 +16,21 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
     var rewardsURL = "https://dimensions2016.herokuapp.com/api/rewards/"
     var rewards = [Reward]()
     var collection: UICollectionView?
+    var rewardsIcons = [Int : String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getRewards()
         
+        rewardsIcons[1] = "happy"
+        rewardsIcons[2] = "impressed"
+        rewardsIcons[3] = "not-happy"
+        rewardsIcons[4] = "not-sure-about-you"
+        rewardsIcons[5] = "sad"
+        
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 8.5, left: 0, bottom: 120.5, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 8.5, left: 0, bottom: 20.5, right: 0)
         self.collection = UICollectionView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height), collectionViewLayout: layout)
         self.collection!.delegate = self
         self.collection!.dataSource = self
@@ -38,11 +45,20 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
         let url = rewards[indexPath.row].icon
         let imageURL = NSURL(string: url)
         let imageData = NSData(contentsOfURL: imageURL!)
-        cell.iconView.image = UIImage(data: imageData!)
+        if imageData != nil {
+            cell.iconView.image = UIImage(data: imageData!)
+        }
+        else {
+            cell.iconView.image = UIImage(named: rewards[indexPath.row].icon)
+        }
+        
+        
         cell.title.text = rewards[indexPath.row].title
         cell.price.text = rewards[indexPath.row].price
+        
         return cell
     }
+    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.rewards.count
@@ -60,6 +76,29 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
         return CGSize(width: self.view.frame.width-20, height: 100)
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let urlString = rewards[indexPath.row].priceEbook
+        let url = NSURL(string: urlString)
+        print (url)
+        UIApplication.sharedApplication().openURL(url!)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+        self.tabBarController?.tabBar.hidden = false
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+        self.tabBarController?.tabBar.hidden = false
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+        self.tabBarController?.tabBar.hidden = false
+    }
+    
     
 
     func getRewards() {
@@ -70,8 +109,19 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
                 case .Success:
                     let rewardsData = JSON(response.result.value!)
                     for (index, subJson) : (String, JSON) in rewardsData {
-                        let reward = Reward(id: subJson["id"].int!, title: subJson["title"].string!, badgeDescription: subJson["description"].string!, icon: subJson["icon"].string!, totalPoints: subJson["total_points"].int!, price: subJson["price"].string!, priceLink: subJson["price_link"].string! ?? "None", priceEbook: subJson["price_ebook"].string! ?? "None")
+                        let reward = Reward(id: subJson["id"].int!, title: subJson["title"].string!, badgeDescription: subJson["description"].string!, icon: subJson["icon"].string!, totalPoints: subJson["total_points"].int!, price: subJson["price"].string!)
                         self.rewards.append(reward)
+                        
+                        for item in self.rewards {
+                            let defaults = NSUserDefaults.standardUserDefaults()
+                            let token = defaults.integerForKey("Points")
+                            if token >= 9 && item.totalPoints == 9 {
+                                item.changeIcon("sad")
+                                let index = self.rewards.indexOf(item)
+                                let link = String(rewardsData[index!]["price_ebook"])
+                                item.setThePriceEbook(link)
+                            }
+                        }
                         
                         dispatch_async(dispatch_get_main_queue(), {
                             self.collection!.reloadData()

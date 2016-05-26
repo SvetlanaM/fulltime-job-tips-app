@@ -13,8 +13,7 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setting tabbar color
-        self.tabBarController?.tabBar.tintColor = UIColor.whiteColor()
+        
         // Get and download all basic questions data
         getBasicQuestion()
         
@@ -84,6 +83,8 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         vc.qDescription = basicQuestions[indexPath.row].answerSet
         self.navigationController?.showViewController(vc, sender: self)
     }
+    
+    
     
     // Download data
     func getBasicQuestion() {

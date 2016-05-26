@@ -19,28 +19,28 @@ class RewardCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame : frame)
-        iconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        iconView = UIImageView(frame: CGRect(x: 10, y: 10, width: 80, height: 80))
         iconView.contentMode = UIViewContentMode.ScaleAspectFill
         iconView.clipsToBounds = true
         contentView.addSubview(iconView)
         
-        let tvFrame = CGRectMake(80, 20, 200, 50)
+        let tvFrame = CGRectMake(100, 20, 200, 30)
         title = UILabel(frame: tvFrame)
-        title.font = UIFont.systemFontOfSize(13.0)
+        title.font = UIFont.boldSystemFontOfSize(15.0)
         title.textColor = .blackColor()
-        title.backgroundColor = .whiteColor()
+        
         title.textAlignment = .Left
-        title.numberOfLines = 2
+        title.numberOfLines = 4
         title.lineBreakMode = .ByWordWrapping
         contentView.addSubview(title)
         
-        let cFrame = CGRectMake(80, 40, 200, 10)
+        let cFrame = CGRectMake(100, 35, 200, 60)
         price = UILabel(frame: cFrame)
         price.font = UIFont.systemFontOfSize(12.0)
         price.textColor = .grayColor()
-        price.backgroundColor = .whiteColor()
+        
         price.textAlignment = .Left
-        price.numberOfLines = 1
+        price.numberOfLines = 2
         contentView.addSubview(price)
     }
 }
