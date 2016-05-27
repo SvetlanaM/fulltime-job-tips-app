@@ -2,6 +2,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+
 class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     // Basic variables
@@ -12,6 +13,7 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         
         // Get and download all basic questions data
@@ -48,7 +50,7 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CustomCollectionViewCell
         cell.backgroundColor = .whiteColor()
-        let url = basicQuestions[indexPath.row].coverImage
+        let url = basicQuestions[indexPath.row].normalImage
         let imageURL = NSURL(string: url)
         let imageData = NSData(contentsOfURL: imageURL!)
         cell.imageView.image = UIImage(data: imageData!)

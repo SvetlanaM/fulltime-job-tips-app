@@ -1,21 +1,24 @@
 PODS:
   - Alamofire (3.4.0)
   - KeychainAccess (2.3.5)
+  - MBProgressHUD (0.9.2)
   - SnapKit (0.21.0)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire
   - KeychainAccess
+  - MBProgressHUD (~> 0.9.2)
   - SnapKit
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   KeychainAccess: e283c1981a6c5655e1984cd411c6faf16fa165ae
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   SnapKit: 2756fe24b706367af224c9c508d2f9166d03354c
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 20d4a66f2538b14c77449a4ed06cb8c99a5ba335
+PODFILE CHECKSUM: 6244d3e43fe05ffd5e2ed12f596ee9e2cbf6e549
 
 COCOAPODS: 1.0.0

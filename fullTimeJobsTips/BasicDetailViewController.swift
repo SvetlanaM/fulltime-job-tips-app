@@ -152,19 +152,19 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
     
     func getPoints(n : Int) {
         if n == 9 {
-            showAlert("You won first badge")
+            showAlert("You won \"Your recruiter is sad\" badge. Go to badges to see your reward.")
         }
-        else if n == 50 {
-            showAlert("You won second badge")
+        else if n == 51 {
+            showAlert("You won \"Your recruiter is not happy\" badge. Go to badges to see your reward.")
         }
-        else if n == 80 {
-            showAlert("You won third badge")
+        else if n == 71 {
+            showAlert("You won \"Your recruiter is not sure\" badge. Go to badges to see your reward.")
         }
         else if n == 120 {
-            showAlert("You won fourth badge")
+            showAlert("You won \"Your recruiter is happy\" badge. Go to badges to see your reward.")
         }
         else if n == 180 {
-            showAlert("You won the last badge")
+            showAlert("You won \"Your recruiter is impressed\" badge. Go to badges to see your reward.")
         }
         else {
             print ("None badge")
@@ -174,7 +174,7 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
     
     func showAlert(message : String) {
         // Alert view
-        let alertController = UIAlertController(title: "You get a badge!", message: message, preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "You gain a badge!", message: message, preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "Ok", style: .Default, handler: {
             (action) -> Void in print("ok")
         })
@@ -195,6 +195,11 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
             else if self.qDescription[item]["is_right"] == false {
                 self.getGreen()
                 self.countGood += 1
+                self.delay(0.7) {
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    let token = defaults.integerForKey("Points")
+                    self.getPoints(token)
+                }
                 
             }
             else {
@@ -214,9 +219,7 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
             self.descLabel.text = "You succesfully finished \(self.qTitle1) section with \(self.countGood) good answers! Now you can continue with the next question sections and learn more to be more prepared on the interview."
             self.badBtn.hidden = true
             self.goodBtn.hidden = true
-            let defaults = NSUserDefaults.standardUserDefaults()
-            let token = defaults.integerForKey("Points")
-            self.getPoints(token)
+            
             }
         }
     }
@@ -229,6 +232,11 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
                 if self.qDescription[item]["is_right"] == true {
                     self.getGreen()
                     self.countGood += 1
+                    self.delay(0.7) {
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    let token = defaults.integerForKey("Points")
+                    self.getPoints(token)
+                    }
                 }
                 else if self.qDescription[item]["is_right"] == false {
                     self.getGrey()

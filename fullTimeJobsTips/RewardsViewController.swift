@@ -21,7 +21,7 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getRewards()
+        
         
         rewardsIcons[1] = "happy"
         rewardsIcons[2] = "impressed"
@@ -84,6 +84,7 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
     }
     
     override func viewDidAppear(animated: Bool) {
+        getRewards()
         self.navigationController?.navigationBarHidden = false
         self.tabBarController?.tabBar.hidden = false
     }
@@ -116,11 +117,36 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
                             let defaults = NSUserDefaults.standardUserDefaults()
                             let token = defaults.integerForKey("Points")
                             if token >= 9 && item.totalPoints == 9 {
-                                item.changeIcon("sad")
+                                item.changeIcon("sad-blue")
                                 let index = self.rewards.indexOf(item)
                                 let link = String(rewardsData[index!]["price_ebook"])
                                 item.setThePriceEbook(link)
                             }
+                            else if token >= 50 && item.totalPoints == 50 {
+                                item.changeIcon("not-happy-blue")
+                                let index = self.rewards.indexOf(item)
+                                let link = String(rewardsData[index!]["price_ebook"])
+                                item.setThePriceEbook(link)
+                            }
+                            else if token >= 80 && item.totalPoints == 80 {
+                                item.changeIcon("not-sure-blue")
+                                let index = self.rewards.indexOf(item)
+                                let link = String(rewardsData[index!]["price_ebook"])
+                                item.setThePriceEbook(link)
+                            }
+                            else if token >= 120 && item.totalPoints == 120 {
+                                item.changeIcon("happy-blue")
+                                let index = self.rewards.indexOf(item)
+                                let link = String(rewardsData[index!]["price_ebook"])
+                                item.setThePriceEbook(link)
+                            }
+                            else if token >= 180 && item.totalPoints == 180 {
+                                item.changeIcon("impressed-blue")
+                                let index = self.rewards.indexOf(item)
+                                let link = String(rewardsData[index!]["price_ebook"])
+                                item.setThePriceEbook(link)
+                            }
+
                         }
                         
                         dispatch_async(dispatch_get_main_queue(), {

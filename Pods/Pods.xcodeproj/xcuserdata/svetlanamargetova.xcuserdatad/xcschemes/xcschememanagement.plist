@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-fullTimeJobsTips.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,12 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>29E27429FAEF1D029F502E61CD5A2F8F</key>
+		<key>4A44DCCC6A71CDFB3D855138F26E2336</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4E45186618880BF7087C5C10F2FCE4A5</key>
+		<key>58FC3DF1F4BF0F1361EACC4BAC93F672</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>823BD44D437784EACA9F091551C738A2</key>
+		<key>838A2C6DA366DE138E5FDF1AF19D94C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>838A2C6DA366DE138E5FDF1AF19D94C0</key>
+		<key>DECFA9CEC701518CF67384EEC983277E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
