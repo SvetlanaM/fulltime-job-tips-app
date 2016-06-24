@@ -12,4 +12,5 @@ target 'fullTimeJobsTips' do
   pod 'KeychainAccess'
   pod 'SnapKit'
   pod 'MBProgressHUD', '~> 0.9.2'
+  pod 'SDWebImage'
 end

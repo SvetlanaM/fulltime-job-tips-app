@@ -1,7 +1,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-
+import SDWebImage
 
 class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
@@ -9,8 +9,8 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     let basicQuestionURL = "https://dimensions2016.herokuapp.com/api/questions/basic"
     var basicQuestions = [Question]()
     var collection: UICollectionView?
-   
-    
+    var indicator : UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +18,7 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         
         // Get and download all basic questions data
         getBasicQuestion()
+        
         
         // Layout collection view settings
         let layout = UICollectionViewFlowLayout()
@@ -105,6 +106,7 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                     dispatch_async(dispatch_get_main_queue(), {
                         self.collection!.reloadData()
                     })
+                    
                 case .Failure(let error):
                     print (error)
                 }

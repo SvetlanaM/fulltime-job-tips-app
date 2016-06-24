@@ -179,7 +179,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DmE-Wh-oRw">
-                                <rect key="frame" x="0.0" y="-1" width="600" height="221"/>
+                                <rect key="frame" x="0.0" y="-1" width="600" height="219"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHA-3s-yVp">
                                 <rect key="frame" x="124" y="99" width="352" height="21"/>
@@ -200,17 +200,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2v-5P-bhA">
-                                <rect key="frame" x="0.0" y="570" width="343" height="30"/>
+                                <rect key="frame" x="458" y="570" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="ulv-JK-wPj"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ulv-JK-wPj"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="badAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qHd-nk-FTr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9I-PL-l7Q">
-                                <rect key="frame" x="257" y="570" width="343" height="30"/>
+                                <rect key="frame" x="534" y="570" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="343" id="KT4-51-wVC"/>
                                     <constraint firstAttribute="width" constant="343" id="SPJ-vb-Iwn"/>
@@ -219,6 +224,7 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="KT4-51-wVC"/>
+                                        <exclude reference="SPJ-vb-Iwn"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -228,19 +234,42 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DmE-Wh-oRw" secondAttribute="bottom" constant="380" id="F5J-om-PIc"/>
+                            <constraint firstItem="j9I-PL-l7Q" firstAttribute="leading" secondItem="Q2v-5P-bhA" secondAttribute="trailing" constant="30" id="5C8-tB-SKv"/>
+                            <constraint firstItem="DmE-Wh-oRw" firstAttribute="leading" secondItem="Q2v-5P-bhA" secondAttribute="leading" constant="-20" id="7eC-k3-gS4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DmE-Wh-oRw" secondAttribute="bottom" constant="382" id="F5J-om-PIc"/>
+                            <constraint firstItem="DmE-Wh-oRw" firstAttribute="centerX" secondItem="aHA-3s-yVp" secondAttribute="centerX" id="FAl-zz-cjs"/>
                             <constraint firstItem="Q2v-5P-bhA" firstAttribute="leading" secondItem="DmE-Wh-oRw" secondAttribute="leading" id="FNd-ju-f58"/>
+                            <constraint firstItem="DmE-Wh-oRw" firstAttribute="trailing" secondItem="j9I-PL-l7Q" secondAttribute="trailing" constant="20" id="PoB-iZ-Yj6"/>
                             <constraint firstItem="aHA-3s-yVp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="79" id="QYP-Y8-PcV"/>
                             <constraint firstAttribute="trailing" secondItem="DmE-Wh-oRw" secondAttribute="trailing" id="ShN-cZ-bKQ"/>
                             <constraint firstItem="DmE-Wh-oRw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="T8a-0N-DKw"/>
                             <constraint firstItem="j9I-PL-l7Q" firstAttribute="baseline" secondItem="Q2v-5P-bhA" secondAttribute="baseline" id="UeU-ev-p4G"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Q2v-5P-bhA" secondAttribute="bottom" id="Ugp-aL-56S"/>
                             <constraint firstItem="aHA-3s-yVp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VFL-m8-kaw"/>
-                            <constraint firstItem="txE-GR-q9E" firstAttribute="top" secondItem="DmE-Wh-oRw" secondAttribute="bottom" constant="31" id="YMR-rh-1vR"/>
-                            <constraint firstItem="aHA-3s-yVp" firstAttribute="centerY" secondItem="DmE-Wh-oRw" secondAttribute="centerY" id="ei1-lA-vJ6"/>
+                            <constraint firstItem="txE-GR-q9E" firstAttribute="top" secondItem="DmE-Wh-oRw" secondAttribute="bottom" constant="33" id="YMR-rh-1vR"/>
+                            <constraint firstItem="Q2v-5P-bhA" firstAttribute="width" secondItem="j9I-PL-l7Q" secondAttribute="width" id="dns-qH-dFT"/>
+                            <constraint firstItem="aHA-3s-yVp" firstAttribute="centerY" secondItem="DmE-Wh-oRw" secondAttribute="centerY" constant="1" id="ei1-lA-vJ6"/>
+                            <constraint firstItem="j9I-PL-l7Q" firstAttribute="trailing" secondItem="DmE-Wh-oRw" secondAttribute="trailing" id="f6t-0W-YTQ"/>
                             <constraint firstItem="txE-GR-q9E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="geD-aX-McU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j9I-PL-l7Q" secondAttribute="trailing" constant="-20" id="jDA-I9-TTn"/>
+                            <constraint firstItem="Q2v-5P-bhA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="nmc-Oq-BsA"/>
                             <constraint firstItem="j9I-PL-l7Q" firstAttribute="trailing" secondItem="DmE-Wh-oRw" secondAttribute="trailing" id="rWm-Oa-xBB"/>
+                            <constraint firstItem="Q2v-5P-bhA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="318.5" id="tXL-bm-J3z"/>
+                            <constraint firstAttribute="trailing" secondItem="j9I-PL-l7Q" secondAttribute="trailing" constant="20" id="ybZ-s6-BWe"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7eC-k3-gS4"/>
+                                <exclude reference="ShN-cZ-bKQ"/>
+                                <exclude reference="T8a-0N-DKw"/>
+                                <exclude reference="FNd-ju-f58"/>
+                                <exclude reference="nmc-Oq-BsA"/>
+                                <exclude reference="tXL-bm-J3z"/>
+                                <exclude reference="f6t-0W-YTQ"/>
+                                <exclude reference="jDA-I9-TTn"/>
+                                <exclude reference="rWm-Oa-xBB"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Basic HR questions" id="3CQ-e9-iHs">
                         <barButtonItem key="backBarButtonItem" title="Back" id="xDv-0E-wCz">
@@ -258,14 +287,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3505" y="847"/>
+            <point key="canvasLocation" x="3504.5" y="846.5"/>
         </scene>
-        <!--Basic Questions-->
+        <!--HR questions-->
         <scene sceneID="Xdu-Xf-WsV">
             <objects>
                 <navigationController id="jMN-3R-Lpm" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" tag="13" title="Basic Questions" image="basic" selectedImage="basic" id="AYp-3w-0ag"/>
+                    <tabBarItem key="tabBarItem" tag="13" title="HR questions" image="basic" selectedImage="basic" id="AYp-3w-0ag"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ehL-kO-bpJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -313,11 +342,11 @@
             </objects>
             <point key="canvasLocation" x="1088" y="847"/>
         </scene>
-        <!--Smart questions-->
+        <!--Ask HR-->
         <scene sceneID="Uuy-8J-isd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s2R-pM-B3k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Smart questions" image="smart" id="3LT-j8-M6E"/>
+                    <tabBarItem key="tabBarItem" title="Ask HR" image="smart" id="3LT-j8-M6E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xt2-zw-ogY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -336,11 +365,11 @@
             </objects>
             <point key="canvasLocation" x="1088" y="1653"/>
         </scene>
-        <!--Badges-->
+        <!--Rewards-->
         <scene sceneID="Q0w-WS-Csk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yLk-Hu-XhK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Badges" image="badge" id="hxw-Os-xcQ"/>
+                    <tabBarItem key="tabBarItem" title="Rewards" image="badge" id="hxw-Os-xcQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q2L-zJ-m5C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

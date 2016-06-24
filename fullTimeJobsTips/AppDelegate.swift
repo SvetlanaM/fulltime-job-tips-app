@@ -19,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         UITabBar.appearance().tintColor = UIColor(red: 11/255.0, green: 121/255.0, blue: 184/255.0, alpha: 1.0)
+        
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        // BasicViewController().getBasicQuestion()
+        sleep(2)
+        
+        
         // Override point for customization after application launch.
         return true
     }
@@ -49,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = NSUserDefaults.standardUserDefaults()
         let defaultValue = ["Points" : []]
         defaults.registerDefaults(defaultValue)
+        
+
         
         
     }

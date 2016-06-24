@@ -77,13 +77,13 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
         
         // Bad button setup
         let badBtnImage = UIImage(named : "bad-icon")
-        self.badBtn.frame = CGRectMake(80, self.view.frame.height-115, 40, 40)
+        self.badBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) + 40, self.view.frame.height-115, 40, 40)
         self.badBtn.setImage(badBtnImage, forState: .Normal)
         self.view.addSubview(self.badBtn)
         self.badBtn.addTarget(self, action: "buttonBad:", forControlEvents: .TouchUpInside)
         
         // Good button setup
-        self.goodBtn.frame = CGRectMake(200, self.view.frame.height-115, 40, 40)
+        self.goodBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) - 90, self.view.frame.height-115, 40, 40)
         let goodBtnImage = UIImage(named : "ok-icon")
         self.goodBtn.setImage(goodBtnImage, forState: .Normal)
         self.view.addSubview(self.goodBtn)
@@ -151,20 +151,14 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
     }
     
     func getPoints(n : Int) {
-        if n == 9 {
+        if n == 30 {
             showAlert("You won \"Your recruiter is sad\" badge. Go to badges to see your reward.")
         }
-        else if n == 51 {
-            showAlert("You won \"Your recruiter is not happy\" badge. Go to badges to see your reward.")
+        else if n == 60 {
+            showAlert("You won \"Your recruiter is not sure about you\" badge. Go to badges to see your reward.")
         }
-        else if n == 71 {
-            showAlert("You won \"Your recruiter is not sure\" badge. Go to badges to see your reward.")
-        }
-        else if n == 120 {
-            showAlert("You won \"Your recruiter is happy\" badge. Go to badges to see your reward.")
-        }
-        else if n == 180 {
-            showAlert("You won \"Your recruiter is impressed\" badge. Go to badges to see your reward.")
+        else if n == 90 {
+            showAlert("You won \"Your recruiter is impressed!\" badge. Go to badges to see your reward.")
         }
         else {
             print ("None badge")
@@ -192,7 +186,7 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
                 self.getRed()
                 
             }
-            else if self.qDescription[item]["is_right"] == false {
+            else  {
                 self.getGreen()
                 self.countGood += 1
                 self.delay(0.7) {
@@ -202,9 +196,7 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
                 }
                 
             }
-            else {
-                self.getGrey()
-            }
+            
             self.descLabel.text = self.qDescription[item]["answer"].string!
         }
         
@@ -238,11 +230,8 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
                     self.getPoints(token)
                     }
                 }
-                else if self.qDescription[item]["is_right"] == false {
-                    self.getGrey()
-                }
                 else {
-                    self.getGrey()
+                    self.getRed()
                 }
                 self.descLabel.text = self.qDescription[item]["answer"].string!
             }

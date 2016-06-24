@@ -28,7 +28,7 @@ class GreenViewController: UIViewController {
         self.view.addSubview(imageV)
         
         // Text setup
-        self.titleA = "You found the right answer!"
+        self.titleA = "Well done!"
         let titleLabel = UILabel(frame: CGRectMake(30, (self.view.frame.height/2.5) + 20, self.view.frame.width-60, 120))
         titleLabel.text = self.titleA
         titleLabel.lineBreakMode = .ByWordWrapping

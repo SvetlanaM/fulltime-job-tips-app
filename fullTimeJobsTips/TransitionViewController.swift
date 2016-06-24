@@ -28,7 +28,7 @@ class TransitionViewController: UIViewController {
         self.view.addSubview(imageV)
         
         // Text setup
-        self.titleA = "Bad choice. This answer is good!"
+        self.titleA = "Not really, sorry!"
         let titleLabel = UILabel(frame: CGRectMake(30, (self.view.frame.height/2.5) + 20, self.view.frame.width-60, 120))
         titleLabel.text = self.titleA
         titleLabel.lineBreakMode = .ByWordWrapping

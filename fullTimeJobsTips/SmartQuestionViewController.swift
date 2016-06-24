@@ -43,13 +43,13 @@ class SmartQuestionViewController: UIViewController {
         
         // Bad button setup
         let badBtnImage = UIImage(named : "bad-icon")
-        self.badBtn.frame = CGRectMake(80, self.view.frame.height-175, 40, 40)
+        self.badBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) + 40, self.view.frame.height-175, 40, 40)
         self.badBtn.setImage(badBtnImage, forState: .Normal)
         self.view.addSubview(self.badBtn)
         self.badBtn.addTarget(self, action: "buttonBad:", forControlEvents: .TouchUpInside)
         
         // Good button setup
-        self.goodBtn.frame = CGRectMake(200, self.view.frame.height-175, 40, 40)
+        self.goodBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) - 90, self.view.frame.height-175, 40, 40)
         let goodBtnImage = UIImage(named : "ok-icon")
         self.goodBtn.setImage(goodBtnImage, forState: .Normal)
         self.view.addSubview(self.goodBtn)
@@ -169,12 +169,10 @@ class SmartQuestionViewController: UIViewController {
                 if self.smartQuestions[0].answerSet[self.numOfTaps]["is_right"] == true {
                     self.getRed()
                 }
-                else if self.smartQuestions[0].answerSet[self.numOfTaps]["is_right"] == false {
+                else {
                     self.getGreen()
                 }
-                else {
-                    self.getGrey()
-                }
+                
                 self.descLabel.text = self.smartQuestions[0].answerSet[self.numOfTaps]["answer"].string!
             }
             
@@ -194,11 +192,8 @@ class SmartQuestionViewController: UIViewController {
                 if self.smartQuestions[0].answerSet[self.numOfTaps]["is_right"] == true {
                     self.getGreen()
                 }
-                else if self.smartQuestions[0].answerSet[self.numOfTaps]["is_right"] == false {
-                    self.getGrey()
-                }
                 else {
-                    self.getGrey()
+                    self.getRed()
                 }
                 self.descLabel.text = self.smartQuestions[0].answerSet[self.numOfTaps]["answer"].string!
                             }

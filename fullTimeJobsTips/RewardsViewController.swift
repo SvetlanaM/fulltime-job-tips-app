@@ -23,11 +23,10 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
         
         
         
-        rewardsIcons[1] = "happy"
-        rewardsIcons[2] = "impressed"
-        rewardsIcons[3] = "not-happy"
-        rewardsIcons[4] = "not-sure-about-you"
-        rewardsIcons[5] = "sad"
+
+        rewardsIcons[3] = "impressed"
+        rewardsIcons[2] = "not-sure-about-you"
+        rewardsIcons[1] = "sad"
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 8.5, left: 0, bottom: 20.5, right: 0)
@@ -103,6 +102,7 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
     
 
     func getRewards() {
+        self.rewards = []
         Alamofire.request(.GET, self.rewardsURL)
             .validate()
             .responseJSON { response in
@@ -113,34 +113,24 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
                         let reward = Reward(id: subJson["id"].int!, title: subJson["title"].string!, badgeDescription: subJson["description"].string!, icon: subJson["icon"].string!, totalPoints: subJson["total_points"].int!, price: subJson["price"].string!)
                         self.rewards.append(reward)
                         
+                        
                         for item in self.rewards {
                             let defaults = NSUserDefaults.standardUserDefaults()
                             let token = defaults.integerForKey("Points")
-                            if token >= 9 && item.totalPoints == 9 {
+                            if token >= 30 && item.totalPoints == 30 {
+                                print ("true")
                                 item.changeIcon("sad-blue")
                                 let index = self.rewards.indexOf(item)
                                 let link = String(rewardsData[index!]["price_ebook"])
                                 item.setThePriceEbook(link)
                             }
-                            else if token >= 50 && item.totalPoints == 50 {
-                                item.changeIcon("not-happy-blue")
-                                let index = self.rewards.indexOf(item)
-                                let link = String(rewardsData[index!]["price_ebook"])
-                                item.setThePriceEbook(link)
-                            }
-                            else if token >= 80 && item.totalPoints == 80 {
+                            else if token >= 60 && item.totalPoints == 60 {
                                 item.changeIcon("not-sure-blue")
                                 let index = self.rewards.indexOf(item)
                                 let link = String(rewardsData[index!]["price_ebook"])
                                 item.setThePriceEbook(link)
                             }
-                            else if token >= 120 && item.totalPoints == 120 {
-                                item.changeIcon("happy-blue")
-                                let index = self.rewards.indexOf(item)
-                                let link = String(rewardsData[index!]["price_ebook"])
-                                item.setThePriceEbook(link)
-                            }
-                            else if token >= 180 && item.totalPoints == 180 {
+                            else if token >= 90 && item.totalPoints == 90 {
                                 item.changeIcon("impressed-blue")
                                 let index = self.rewards.indexOf(item)
                                 let link = String(rewardsData[index!]["price_ebook"])
