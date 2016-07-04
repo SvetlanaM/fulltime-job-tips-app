@@ -13,7 +13,7 @@ import SwiftyJSON
 class SmartQuestionViewController: UIViewController {
     
     // Basic variables
-    let smartQuestionURL = "https://dimensions2016.herokuapp.com/api/questions/smart"
+    let smartQuestionURL = "https://pdimensions2016.herokuapp.com/api/questions/smart/"
     var badBtn = UIButton(type: .Custom) as UIButton
     var numOfTaps : Int = 1
     var goodBtn = UIButton(type: .Custom) as UIButton
@@ -28,7 +28,7 @@ class SmartQuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController!.navigationBar.topItem?.title = "Smart Questions"
+        self.navigationController!.navigationBar.topItem?.title = "Ask HR"
         
         // Download smart questions
         getSmartQuestions()

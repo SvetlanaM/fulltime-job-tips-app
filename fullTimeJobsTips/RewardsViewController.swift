@@ -13,7 +13,7 @@ import SwiftyJSON
 class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     // Basic variables
-    var rewardsURL = "https://dimensions2016.herokuapp.com/api/rewards/"
+    var rewardsURL = "https://pdimensions2016.herokuapp.com/api/rewards/"
     var rewards = [Reward]()
     var collection: UICollectionView?
     var rewardsIcons = [Int : String]()
@@ -121,19 +121,19 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
                                 print ("true")
                                 item.changeIcon("sad-blue")
                                 let index = self.rewards.indexOf(item)
-                                let link = String(rewardsData[index!]["price_ebook"])
+                                let link = String(rewardsData[index!]["price_link"])
                                 item.setThePriceEbook(link)
                             }
                             else if token >= 60 && item.totalPoints == 60 {
                                 item.changeIcon("not-sure-blue")
                                 let index = self.rewards.indexOf(item)
-                                let link = String(rewardsData[index!]["price_ebook"])
+                                let link = String(rewardsData[index!]["price_link"])
                                 item.setThePriceEbook(link)
                             }
                             else if token >= 90 && item.totalPoints == 90 {
                                 item.changeIcon("impressed-blue")
                                 let index = self.rewards.indexOf(item)
-                                let link = String(rewardsData[index!]["price_ebook"])
+                                let link = String(rewardsData[index!]["price_link"])
                                 item.setThePriceEbook(link)
                             }
 

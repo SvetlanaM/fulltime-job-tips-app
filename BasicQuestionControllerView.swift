@@ -6,7 +6,7 @@ import SDWebImage
 class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     // Basic variables
-    let basicQuestionURL = "https://dimensions2016.herokuapp.com/api/questions/basic"
+    let basicQuestionURL = "https://pdimensions2016.herokuapp.com/api/questions/basic/"
     var basicQuestions = [Question]()
     var collection: UICollectionView?
     var indicator : UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
@@ -29,6 +29,8 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         self.collection!.registerClass(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         self.view.addSubview(self.collection!)
         self.collection!.backgroundColor = UIColor(red: 206/255.0, green: 206/255.0, blue: 206/255.0, alpha: 1.0)
+        
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -103,9 +105,9 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                         self.basicQuestions.append(basicQuestion)
                     }
                     
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.collection!.reloadData()
-                    })
+                    self.collection!.reloadData()
+                    
+                    
                     
                 case .Failure(let error):
                     print (error)

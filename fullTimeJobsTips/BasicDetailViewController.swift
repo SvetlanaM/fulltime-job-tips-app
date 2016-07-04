@@ -42,13 +42,13 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
         // Image setup
         let image = UIImage(data: self.coverImage1)
         self.imageV = UIImageView(image : image!)
-        self.imageV.frame = CGRectMake(0, 60, self.view.frame.width, 200)
+        self.imageV.frame = CGRectMake(0, 0, self.view.frame.width, 200)
         self.imageV.contentMode = .ScaleAspectFill
         self.imageV.clipsToBounds = true
         self.view.addSubview(imageV)
         
         // Title setup
-        self.titleLabel = UILabel(frame: CGRectMake(10, 115, self.view.frame.width-30, 80))
+        self.titleLabel = UILabel(frame: CGRectMake(10, 45, self.view.frame.width-30, 80))
         self.titleLabel.text = self.qTitle1
         self.titleLabel.lineBreakMode = .ByWordWrapping
         self.titleLabel.numberOfLines = 4
@@ -58,7 +58,7 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
         self.view.addSubview(titleLabel)
         
         // Answer setup
-        self.descLabel = UILabel(frame: CGRectMake(20, self.view.frame.height/2 + 10, self.view.frame.width-60, 150))
+        self.descLabel = UILabel(frame: CGRectMake(20, (self.view.frame.height/2) - 40, self.view.frame.width-60, 150))
         
         // First answer
         func getFirstItem() -> String {
@@ -77,13 +77,13 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
         
         // Bad button setup
         let badBtnImage = UIImage(named : "bad-icon")
-        self.badBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) + 40, self.view.frame.height-115, 40, 40)
+        self.badBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) + 40, self.view.frame.height-200, 40, 40)
         self.badBtn.setImage(badBtnImage, forState: .Normal)
         self.view.addSubview(self.badBtn)
         self.badBtn.addTarget(self, action: "buttonBad:", forControlEvents: .TouchUpInside)
         
         // Good button setup
-        self.goodBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) - 90, self.view.frame.height-115, 40, 40)
+        self.goodBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) - 90, self.view.frame.height-200, 40, 40)
         let goodBtnImage = UIImage(named : "ok-icon")
         self.goodBtn.setImage(goodBtnImage, forState: .Normal)
         self.view.addSubview(self.goodBtn)

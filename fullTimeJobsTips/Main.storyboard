@@ -6,12 +6,12 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--FulltimeJobsTips-->
+        <!--HR Questions-->
         <scene sceneID="IDu-yp-tHW">
             <objects>
                 <collectionViewController id="Vqw-s1-v4m" customClass="BasicViewController" customModule="fullTimeJobsTips" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="PAC-pX-Azx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RRm-Po-BWt">
                             <size key="itemSize" width="50" height="50"/>
@@ -21,7 +21,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="TDp-4P-P4a" customClass="CustomCollectionViewCell" customModule="fullTimeJobsTips" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -38,7 +38,7 @@
                             <outlet property="delegate" destination="Vqw-s1-v4m" id="cmL-pr-ukF"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="FulltimeJobsTips" id="gck-4y-NWb">
+                    <navigationItem key="navigationItem" title="HR Questions" id="gck-4y-NWb">
                         <barButtonItem key="backBarButtonItem" title="Back" id="OJl-81-yfX">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
@@ -48,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="2712" y="847"/>
         </scene>
-        <!--Smart Question View Controller-->
+        <!--Ask HR-->
         <scene sceneID="qe4-Xr-MZh">
             <objects>
                 <viewController id="sQ7-tI-EvM" customClass="SmartQuestionViewController" customModule="fullTimeJobsTips" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,7 +61,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="80l-Iy-QuT"/>
+                    <navigationItem key="navigationItem" title="Ask HR" id="80l-Iy-QuT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1d-AJ-lGZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,7 +76,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8PA-wz-Pjd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qq9-60-Jnc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -296,7 +296,7 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" tag="13" title="HR questions" image="basic" selectedImage="basic" id="AYp-3w-0ag"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ehL-kO-bpJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ehL-kO-bpJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -371,7 +371,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yLk-Hu-XhK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Rewards" image="badge" id="hxw-Os-xcQ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q2L-zJ-m5C">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Q2L-zJ-m5C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.043137254899999998" green="0.47450980390000003" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
