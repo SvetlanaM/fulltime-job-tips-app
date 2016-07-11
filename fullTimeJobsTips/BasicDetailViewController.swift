@@ -58,7 +58,7 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
         self.view.addSubview(titleLabel)
         
         // Answer setup
-        self.descLabel = UILabel(frame: CGRectMake(20, (self.view.frame.height/2) - 40, self.view.frame.width-60, 150))
+        self.descLabel = UILabel(frame: CGRectMake(20, (self.view.frame.height/2) - 60, self.view.frame.width-60, 200))
         
         // First answer
         func getFirstItem() -> String {
@@ -75,32 +75,43 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
         self.descLabel.textColor = .blackColor()
         self.view.addSubview(self.descLabel)
         
+        
+        
         // Bad button setup
         let badBtnImage = UIImage(named : "bad-icon")
-        self.badBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) + 40, self.view.frame.height-200, 40, 40)
+        self.badBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) + 40, self.view.frame.height-130, 40, 40)
         self.badBtn.setImage(badBtnImage, forState: .Normal)
         self.view.addSubview(self.badBtn)
         self.badBtn.addTarget(self, action: "buttonBad:", forControlEvents: .TouchUpInside)
         
         // Good button setup
-        self.goodBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) - 90, self.view.frame.height-200, 40, 40)
+        self.goodBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) - 90, self.view.frame.height-130, 40, 40)
         let goodBtnImage = UIImage(named : "ok-icon")
         self.goodBtn.setImage(goodBtnImage, forState: .Normal)
         self.view.addSubview(self.goodBtn)
         self.goodBtn.addTarget(self, action: "buttonGood:", forControlEvents: .TouchUpInside)
+        
+        let scrollView = UIScrollView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
+        scrollView.addSubview(self.descLabel)
+        scrollView.addSubview(imageV)
+        scrollView.addSubview(titleLabel)
+        scrollView.addSubview(self.badBtn)
+        scrollView.addSubview(self.goodBtn)
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 20)
+        self.view.addSubview(scrollView)
         
     }
     
     
     override func viewDidAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
-        self.tabBarController?.tabBar.hidden = false
+        self.tabBarController?.tabBar.hidden = true
         
     }
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
-        self.tabBarController?.tabBar.hidden = false
+        self.tabBarController?.tabBar.hidden = true
         
         let defaults = NSUserDefaults.standardUserDefaults()
         let token = defaults.integerForKey("Points")

@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 class SmartQuestionViewController: UIViewController {
     
@@ -28,6 +29,7 @@ class SmartQuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.show()
         self.navigationController!.navigationBar.topItem?.title = "Ask HR"
         
         // Download smart questions
@@ -120,6 +122,7 @@ class SmartQuestionViewController: UIViewController {
                         smartQuestion.answerSet = subJson["answer_set"].array!
                         self.smartQuestions.append(smartQuestion)
                         
+                        SVProgressHUD.dismiss()
                         // Image setup
                         self.imageURL = NSURL(string: self.smartQuestions[0].coverImage)
                         var imageData = NSData(contentsOfURL: self.imageURL!)

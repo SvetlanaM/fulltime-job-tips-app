@@ -2,6 +2,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SDWebImage
+import SVProgressHUD
 
 class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
@@ -15,7 +16,7 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         super.viewDidLoad()
         
         
-        
+        SVProgressHUD.show()
         // Get and download all basic questions data
         getBasicQuestion()
         
@@ -105,6 +106,7 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                         self.basicQuestions.append(basicQuestion)
                     }
                     
+                    SVProgressHUD.dismiss()
                     self.collection!.reloadData()
                     
                     

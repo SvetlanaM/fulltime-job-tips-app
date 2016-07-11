@@ -11,6 +11,6 @@ target 'fullTimeJobsTips' do
   pod 'Alamofire'
   pod 'KeychainAccess'
   pod 'SnapKit'
-  pod 'MBProgressHUD', '~> 0.9.2'
   pod 'SDWebImage'
+  pod 'SVProgressHUD'
 end

@@ -368,11 +368,13 @@
 			baseConfigurationReference = 795EB2E6BE7A244723FBCBDE /* Pods-fullTimeJobsTips.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Svetlana Margetova (6T7WW7724V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Svetlana Margetova (6T7WW7724V)";
 				INFOPLIST_FILE = fullTimeJobsTips/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.brainity.fullTimeJobsTips;
+				PRODUCT_BUNDLE_IDENTIFIER = com.margetova.fullTimeJobsTips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -381,11 +383,13 @@
 			baseConfigurationReference = 3740AAC25D7C89A946243454 /* Pods-fullTimeJobsTips.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Svetlana Margetova (D3U95MADM7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Svetlana Margetova (D3U95MADM7)";
 				INFOPLIST_FILE = fullTimeJobsTips/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.brainity.fullTimeJobsTips;
+				PRODUCT_BUNDLE_IDENTIFIER = com.margetova.fullTimeJobsTips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

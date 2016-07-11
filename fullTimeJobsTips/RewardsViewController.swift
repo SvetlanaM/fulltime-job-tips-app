@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
@@ -21,7 +22,7 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        SVProgressHUD.show()
         
 
         rewardsIcons[3] = "impressed"
@@ -139,6 +140,7 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
 
                         }
                         
+                        SVProgressHUD.dismiss()
                         dispatch_async(dispatch_get_main_queue(), {
                             self.collection!.reloadData()
                         })

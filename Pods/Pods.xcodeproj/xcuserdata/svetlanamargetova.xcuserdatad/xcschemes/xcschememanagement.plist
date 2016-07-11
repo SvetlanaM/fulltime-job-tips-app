@@ -14,17 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MBProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-fullTimeJobsTips.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,12 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0EA377AFB2F84E6D8C2605DE03272BE6</key>
+		<key>33AA1C829814CBC023D4AB22703C1EDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>49241A192900FE9380257B9CA08CBEC2</key>
+		<key>655CD444B08A55BBCD980E3640414114</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>767474EA9FB6D34531386EC5B2AA9BC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,17 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B85F14993483CB5A10FF109D6A45430</key>
+		<key>9297DBCD74F63CE62AB4DF2C428E29A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B7D92D544868C2D15007926380AC6007</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
+		<key>FA5B06FA9DA486AC2C5582F4D8531D30</key>
 		<dict>
 			<key>primary</key>
 			<true/>
