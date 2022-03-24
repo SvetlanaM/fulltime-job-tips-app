@@ -18,11 +18,7 @@ class RewardCollectionViewCell: UICollectionViewCell {
     }
     
     override init(frame: CGRect) {
-        
-        
         super.init(frame : frame)
-        
-        
         iconView = UIImageView(frame: CGRect(x: 10, y: 10, width: 80, height: 80))
         iconView.contentMode = UIViewContentMode.ScaleAspectFill
         iconView.clipsToBounds = true

@@ -25,7 +25,6 @@ class AAPTransactionDirector: NSObject,UIViewControllerAnimatedTransitioning,UIN
     
   lazy var interactiveEndBlock:(()->Void)? = nil
     
-    
     var isInteractive:Bool = false
     var duration:CGFloat?
     private var displayLink:CADisplayLink? = nil
@@ -38,23 +37,13 @@ class AAPTransactionDirector: NSObject,UIViewControllerAnimatedTransitioning,UIN
         set {
             
             _percent = newValue
-            
-          
                  self._context?.updateInteractiveTransition(_percent)
-            
-           
-            
             self._context?.containerView()!.layer.timeOffset = CFTimeInterval(_percent*self.duration!)
             if (self._context != nil) {
     
                 self.interactiveUpdateBlock?(transactionContext:_context!,percent:_percent)
-                
             }
-         
-           
-            
-        }
-        
+        } 
     }
     var timeOffset:CFTimeInterval{
         get {
@@ -69,21 +58,13 @@ class AAPTransactionDirector: NSObject,UIViewControllerAnimatedTransitioning,UIN
         
     }
 
-
-  
-    
-     func updateFinishAnimation(){
-        
-     
+    func updateFinishAnimation(){
         let offset =  CFTimeInterval( self.timeOffset) + displayLink!.duration
-        
         if offset > CFTimeInterval(self.duration!) {
              transitionFinishedFinishing()
-        }else{
+        } else{
             self.timeOffset=offset
         }
-
-        
     }
     
      func updateCancelAnimation(){
@@ -94,18 +75,14 @@ class AAPTransactionDirector: NSObject,UIViewControllerAnimatedTransitioning,UIN
             transitionFinishedCanceling()
         }else{
            self.timeOffset=offset
-       
         }
     }
     
     private func transitionFinishedCanceling(){
         self._context?.containerView()!.layer.timeOffset=0
         displayLink?.invalidate()
-  
         _context?.completeTransition(false)
-        
         self.interactiveEndBlock?();
-        
     }
  
     private func transitionFinishedFinishing(){
@@ -113,75 +90,35 @@ class AAPTransactionDirector: NSObject,UIViewControllerAnimatedTransitioning,UIN
         _context?.finishInteractiveTransition()
         _context?.completeTransition(true)
           self.interactiveEndBlock?();
-        
     }
     
-    
-    
-//MARK: init & deinit
-
-      override init() {
-
-        }
-    
-     deinit{
-    
-        }
-
-
-
 //MARK: animation transaction delegate
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval{
-        
         return NSTimeInterval(self.duration!);
     }
    
     func animateTransition(transitionContext: UIViewControllerContextTransitioning){
         self._context=transitionContext
-      
-  
         var v1=transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!.view
         var v2=transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!.view
-        
-     
-        
-         self.animationBlock?(transactionContext: self._context!, animationTime: self.duration!, transitionCompletion: { () -> Void in
-            
-        
-          
+        self.animationBlock?(transactionContext: self._context!, animationTime: self.duration!, transitionCompletion: { () -> Void in
            transitionContext.completeTransition(true)
-      
         });
-        
     }
     
 //MARK: interactive transaction delegate
     func startInteractiveTransition(transitionContext: UIViewControllerContextTransitioning){
-        
         self._context=transitionContext
-        
-        
         self.animationBlock?(transactionContext: self._context!, animationTime: self.duration!, transitionCompletion: { () -> Void in
-            
-         
-            
         });
     }
     
 //MARK: navigation controller delegate
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-     
-    
        return self
     }
     
-    
-    
-    
     func  navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        
         return self.isInteractive ? self : nil;
-        
     }
 }

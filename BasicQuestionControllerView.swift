@@ -14,12 +14,10 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+         
         SVProgressHUD.show()
         // Get and download all basic questions data
         getBasicQuestion()
-        
         
         // Layout collection view settings
         let layout = UICollectionViewFlowLayout()
@@ -30,8 +28,6 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         self.collection!.registerClass(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         self.view.addSubview(self.collection!)
         self.collection!.backgroundColor = UIColor(red: 206/255.0, green: 206/255.0, blue: 206/255.0, alpha: 1.0)
-        
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -41,8 +37,7 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
-        self.tabBarController?.tabBar.hidden = false
-        
+        self.tabBarController?.tabBar.hidden = false 
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -104,13 +99,9 @@ class BasicViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                         let basicQuestion = Question(id : subJson["id"].int!, title : subJson["title"].string!, proTip : subJson["pro_tip"].string!, coverImage : subJson["cover_image"].string!, normalImage : subJson["normal_image"].string!)
                         basicQuestion.answerSet = subJson["answer_set"].array!
                         self.basicQuestions.append(basicQuestion)
-                    }
-                    
+                    }                  
                     SVProgressHUD.dismiss()
-                    self.collection!.reloadData()
-                    
-                    
-                    
+                    self.collection!.reloadData()                  
                 case .Failure(let error):
                     print (error)
                 }

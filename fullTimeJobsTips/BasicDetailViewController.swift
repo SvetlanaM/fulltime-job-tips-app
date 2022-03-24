@@ -34,10 +34,7 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
         
         let defaults = NSUserDefaults.standardUserDefaults()
         let token = defaults.integerForKey("Points")
-        print (token)
-        
         self.view.backgroundColor = UIColor.whiteColor()
-        
         
         // Image setup
         let image = UIImage(data: self.coverImage1)
@@ -75,8 +72,6 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
         self.descLabel.textColor = .blackColor()
         self.view.addSubview(self.descLabel)
         
-        
-        
         // Bad button setup
         let badBtnImage = UIImage(named : "bad-icon")
         self.badBtn.frame = CGRectMake((self.view.frame.width - self.view.frame.width/2.0) + 40, self.view.frame.height-130, 40, 40)
@@ -90,7 +85,6 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
         self.goodBtn.setImage(goodBtnImage, forState: .Normal)
         self.view.addSubview(self.goodBtn)
         self.goodBtn.addTarget(self, action: "buttonGood:", forControlEvents: .TouchUpInside)
-        
         let scrollView = UIScrollView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
         scrollView.addSubview(self.descLabel)
         scrollView.addSubview(imageV)
@@ -99,20 +93,16 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
         scrollView.addSubview(self.goodBtn)
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 20)
         self.view.addSubview(scrollView)
-        
     }
-    
     
     override func viewDidAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
         self.tabBarController?.tabBar.hidden = true
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
         self.tabBarController?.tabBar.hidden = true
-        
         let defaults = NSUserDefaults.standardUserDefaults()
         let token = defaults.integerForKey("Points")
         defaults.setObject(token + self.countGood, forKey: "Points")
@@ -257,12 +247,7 @@ class BasicDetailViewController: UIViewController, UIAlertViewDelegate {
                 self.descLabel.text = "You succesfully finished \(self.qTitle1) section with \(self.countGood) good answers! Now you can continue with the next question sections and learn more to be more prepared on the interview."
                 self.badBtn.hidden = true
                 self.goodBtn.hidden = true
-                
-                
             }
         }
     }
-    
-    
-    
 }

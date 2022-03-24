@@ -13,19 +13,11 @@ import SwiftyJSON
 class BasicViewController: UICollectionViewController
 {
     let basicQuestionURL = "https://dimensions2016.herokuapp.com/api/questions/basic"
-    
     var basicQuestions = [Question]()
   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        getBasicQuestion()
-        
-        //collectionView?.bac
-        
-        
-        
-        
+        getBasicQuestion() 
     }
     
     func getBasicQuestion() {
@@ -44,9 +36,6 @@ class BasicViewController: UICollectionViewController
                 case .Failure(let error):
                     print (error)
                 }
-                
         }
-        
     }
-
 }

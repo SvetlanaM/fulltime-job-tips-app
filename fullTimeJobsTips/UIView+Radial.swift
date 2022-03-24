@@ -16,28 +16,20 @@ class LayerAnimator : NSObject{
     var animLayer:CALayer?
     var caAnimation:CAAnimation?
     
-    
     init(layer: CALayer , animation:CAAnimation) {
-        
         self.caAnimation=animation;
         self.animLayer=layer;
-      
-        
-        
     }
     
     func startAnimationWithBlock(block:(()->Void)){
           self.caAnimation?.delegate=self
         self.complitionBlock=block;
-        
         self.animLayer?.addAnimation(self.caAnimation!, forKey: "anim")
     }
     
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
         self.complitionBlock?()
     }
-    
-    
 }
 
 

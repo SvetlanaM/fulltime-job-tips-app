@@ -21,10 +21,7 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         SVProgressHUD.show()
-        
-
         rewardsIcons[3] = "impressed"
         rewardsIcons[2] = "not-sure-about-you"
         rewardsIcons[1] = "sad"
@@ -52,10 +49,8 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
             cell.iconView.image = UIImage(named: rewards[indexPath.row].icon)
         }
         
-        
         cell.title.text = rewards[indexPath.row].title
         cell.price.text = rewards[indexPath.row].price
-        
         return cell
     }
     
@@ -100,8 +95,6 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
         self.tabBarController?.tabBar.hidden = false
     }
     
-    
-
     func getRewards() {
         self.rewards = []
         Alamofire.request(.GET, self.rewardsURL)
@@ -113,7 +106,6 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
                     for (index, subJson) : (String, JSON) in rewardsData {
                         let reward = Reward(id: subJson["id"].int!, title: subJson["title"].string!, badgeDescription: subJson["description"].string!, icon: subJson["icon"].string!, totalPoints: subJson["total_points"].int!, price: subJson["price"].string!)
                         self.rewards.append(reward)
-                        
                         
                         for item in self.rewards {
                             let defaults = NSUserDefaults.standardUserDefaults()
@@ -143,17 +135,11 @@ class RewardsViewController: UIViewController, UICollectionViewDelegateFlowLayou
                         SVProgressHUD.dismiss()
                         dispatch_async(dispatch_get_main_queue(), {
                             self.collection!.reloadData()
-                        })
-                        
+                        }) 
                     }
                 case .Failure(let error):
                     print (error)
-                }
-                
+                }   
         }
     }
-    
-    
-    
-
 }

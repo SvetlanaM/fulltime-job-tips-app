@@ -27,7 +27,6 @@ class Question: NSObject {
 
 }
 
-
 class Reward : NSObject {
     var id : Int
     var title : String
@@ -37,7 +36,6 @@ class Reward : NSObject {
     var price : String
     var priceLink : String = ""
     var priceEbook : String = ""
-    
     
     init(id : Int, title : String, badgeDescription : String, icon : String, totalPoints : Int, price : String) {
         self.id = id
